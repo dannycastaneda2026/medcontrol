@@ -1,0 +1,101 @@
+danny.castaneda.2026@gmail.com
+dcastaneda.,2026
+
+
+# Crear proyecto Next.js con TypeScript
+npx create-next-app@latest medcontrol --typescript --tailwind --eslint --app --src-dir --import-alias "@/*"
+
+# Entrar al directorio
+cd medcontrol
+
+# Instalar dependencias de Supabase
+npm install @supabase/supabase-js @supabase/auth-helpers-nextjs
+
+# Instalar dependencias adicionales
+npm install date-fns react-hook-form zod @hookform/resolvers lucide-react
+
+# Instalar dependencias de desarrollo
+npm install -D supabase @types/node
+
+npm install @supabase/ssr
+npm install @supabase/supabase-js @supabase/ssr @supabase/auth-helpers-nextjs
+
+
+-- --------------------------------------
+
+medcontrol/
+├── src/
+│   ├── app/
+│   │   ├── (auth)/
+│   │   │   ├── login/
+│   │   │   │   └── page.tsx
+│   │   │   └── layout.tsx
+│   │   ├── admin/
+│   │   │   ├── dashboard/
+│   │   │   │   └── page.tsx
+│   │   │   ├── usuarios/
+│   │   │   │   └── page.tsx
+│   │   │   ├── alumnos/
+│   │   │   │   └── page.tsx
+│   │   │   ├── ordenes/
+│   │   │   │   └── page.tsx
+│   │   │   └── layout.tsx
+│   │   ├── educadora/
+│   │   │   ├── dashboard/
+│   │   │   │   └── page.tsx
+│   │   │   ├── entregas/
+│   │   │   │   └── page.tsx
+│   │   │   └── layout.tsx
+│   │   ├── apoderado/
+│   │   │   ├── dashboard/
+│   │   │   │   └── page.tsx
+│   │   │   ├── alumno/
+│   │   │   │   └── page.tsx
+│   │   │   └── layout.tsx
+│   │   ├── api/
+│   │   │   └── auth/
+│   │   │       └── callback/
+│   │   │           └── route.ts
+│   │   ├── layout.tsx
+│   │   └── page.tsx
+│   ├── components/
+│   │   ├── ui/           # shadcn/ui components
+│   │   ├── navigation.tsx
+│   │   └── role-guard.tsx
+│   ├── lib/
+│   │   ├── supabase/
+│   │   │   ├── client.ts
+│   │   │   ├── server.ts
+│   │   │   └── middleware.ts
+│   │   ├── utils.ts
+│   │   └── types/
+│   │       └── database.ts
+│   └── hooks/
+│       └── use-auth.ts
+├── supabase/
+│   └── migrations/
+│       └── 001_initial.sql
+├── public/
+├── next.config.js
+├── tailwind.config.ts
+├── tsconfig.json
+└── package.json
+
+-- -------------------------------
+
+# Crear estructura de carpetas
+mkdir -p src/app/(auth)/login
+mkdir -p src/app/admin/dashboard
+mkdir -p src/app/admin/usuarios
+mkdir -p src/app/admin/alumnos
+mkdir -p src/app/admin/ordenes
+mkdir -p src/app/educadora/dashboard
+mkdir -p src/app/educadora/entregas
+mkdir -p src/app/apoderado/dashboard
+mkdir -p src/app/apoderado/alumno
+mkdir -p src/app/api/auth/callback
+mkdir -p src/components/ui
+mkdir -p src/lib/supabase
+mkdir -p src/lib/types
+mkdir -p src/hooks
+mkdir -p supabase/migrations
