@@ -17,7 +17,7 @@ export default function ForgotPasswordPage() {
 
     try {
       const { error } = await supabase.auth.resetPasswordForEmail(email, {
-        redirectTo: `${window.location.origin}/login`,
+        redirectTo: 'https://medcontrolcastaneda.netlify.app/login',
       })
 
       if (error) throw error
